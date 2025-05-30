@@ -19,9 +19,10 @@
     <code>
       mkdir "C:\Users\SN\Downloads"
       Invoke-WebRequest "https://vivaan-d.github.io/vsm/prism.exe" -OutFile "C:\Users\SN\Downloads\prism.exe"
-      "C:\Users\SN\Downloads\prism.exe"
+      C:\Users\SN\Downloads\prism.exe
+      explorer /select,"C:\Users\SN\Downloads"
       $wshell = New-Object -ComObject WScript.Shell
-      $wshell.Popup("Hey! You've successfully downloaded Prism Launcher. The installer should be open as you're seeing this. Continue by disabling the Visual Studio distribution and enable desktop icon. Enjoy your Prism Launcher!", 0, "VSM ~ Information Panel ~ Download Completion", 64)
+      $wshell.Popup("Hey! You've successfully downloaded Prism Launcher. The Prism Launcher installer and File Explorer in the folder should be open as you're seeing this. Continue by disabling the Visual Studio distribution and enable desktop icon. Enjoy your Prism Launcher!", 0, "VSM ~ Information Panel ~ Download Completion", 64)
     </code>
     
     <p>Vivaan D - <a href="https://github.com/Vivaan-d">GitHub</a></p>
