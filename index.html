@@ -18,10 +18,12 @@
     <h3>Prism installation PowerShell: </h3>
     <code>
       mkdir "C:\Users\SN\Downloads"<br>
+      $wshell = New-Object -ComObject WScript.Shell<br>
+      $wshell.Popup("Please wait as the download processes. This shouldn't take more than a minute. (You may see progress on PowerShell)", 0, "VSM ~ Information Panel ~ Download in progress", 64)
       Invoke-WebRequest "https://vivaan-d.github.io/vsm/prism.exe" -OutFile "C:\Users\SN\Downloads\prism.exe"<br>
-      C:\Users\SN\Downloads\prism.exe<br>
       Invoke-WebRequest "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.7%2B6/OpenJDK21U-jdk_x64_windows_hotspot_21.0.7_6.msi" -OutFile "C:\Users\SN\Downloads\openjdk.msi"<br>
       C:\Users\SN\Downloads\openjdk.msi<br>
+      C:\Users\SN\Downloads\prism.exe<br>
       explorer /select,"C:\Users\SN\Downloads"<br>
       $wshell = New-Object -ComObject WScript.Shell<br>
       $wshell.Popup("Hey! You've successfully downloaded Prism Launcher. The Prism Launcher installer, Eclipse Temurin Java 21 Installer and File Explorer in the folder should be open as you're seeing this. Continue by disabling the Visual Studio distribution and enable desktop icon. Enjoy your Prism Launcher!", 0, "VSM ~ Information Panel ~ Download Completion", 64)
