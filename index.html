@@ -11,13 +11,18 @@
     </ul>
     <h2>VSM powershell</h2>
     <ul>
-      <li>Install Prism Launcher: Invoke-WebRequest https://vivaan-d.github.io/vsm/prism.exe -OutFile C:\Users\SN\Downloads\prism.exe<br>
-      C:\Users\SN\Downloads\prism.exe</li>
+      <li>Install Prism Launcher: Invoke-WebRequest "https://vivaan-d.github.io/vsm/prism.exe" -OutFile "C:\Users\SN\Downloads\prism.exe"<br>
+      "C:\Users\SN\Downloads\prism.exe"</li>
     </ul>
     <h1>warning: use desktop shortcut when opening</h1>
-    <h3>textless format: </h3>
-    <code>Invoke-WebRequest https://vivaan-d.github.io/vsm/prism.exe -OutFile C:\Users\SN\Downloads\prism.exe<br>
-      C:\Users\SN\Downloads\prism.exe</code>
+    <h3>Prism installation PowerShell: </h3>
+    <code>
+      mkdir "C:\Users\SN\test\Downloads"
+      Invoke-WebRequest "https://vivaan-d.github.io/vsm/prism.exe" -OutFile "C:\Users\SN\Downloads\prism.exe"
+      "C:\Users\SN\Downloads\prism.exe"
+      $wshell = New-Object -ComObject WScript.Shell
+      $wshell.Popup("Hey! You've successfully downloaded Prism Launcher. The installer should be open as you're seeing this. Continue by disabling the Visual Studio distribution and enable desktop icon. Enjoy your Prism Launcher!", 0, "VSM ~ Information Panel ~ Download Completion", 64)
+    </code>
     
     <p>Vivaan D - <a href="https://github.com/Vivaan-d">GitHub</a></p>
     <script src="https://lambdajs.netlify.app/1.0/lambda.js"></script>
