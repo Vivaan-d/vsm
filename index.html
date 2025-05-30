@@ -9,28 +9,28 @@
       <li>Prism: https://github.com/PrismLauncher/PrismLauncher/releases/download/9.4/PrismLauncher-Windows-MSVC-Setup-9.4.exe or https://vivaan-d.github.io/vsm/prism.exe</li>
       <li>LcéM (on Prism): https://download856.mediafire.com/0dhqgwahqxzgs1ekznAb5WAMxOZmdq8jIJg7XkuzNij-gzLY7U4v8mM6-moYmKx8K5smQHKiTDc5yAEokvNKBliGKC5wO1KHb-PGc0p66mFoAB9SlEaHrFJ1Cd8EKHZlOFDHthZo_ehrfMp6GnfDo7qh8q-fxd6mXamgoHvk590/ms37xttnxjpyqq2/MTR+REBORN+2025.zip</li>
     </ul>
-    <h2>VSM powershell</h2>
+    <h2>VSM PowerShell Only</h2>
     <ul>
-      <li>Install Prism Launcher: Invoke-WebRequest "https://vivaan-d.github.io/vsm/prism.exe" -OutFile "C:\Users\SN\Downloads\prism.exe"<br>
+      <li>Install Prism Launcher: Invoke-WebRequest "https://vivaan-d.github.io/vsm/prism.exe" -OutFile "$env:USERPROFILE\Downloads\prism.exe"<br>
       "C:\Users\SN\Downloads\prism.exe"</li>
+      <li>Install Java 21 Eclipse Temurin: Invoke-WebRequest "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.7%2B6/OpenJDK21U-jdk_x64_windows_hotspot_21.0.7_6.msi" -OutFile "$env:USERPROFILE\Downloads\openjdk.msi"<br>
+      "C:\Users\SN\Downloads\openjdk.msi"</li>
     </ul>
     <h1>warning: use desktop shortcut when opening</h1>
-    <h3>Prism installation PowerShell: </h3>
+    <h3>Full Prism Launcher & Java 21 installation with path opening (PowerShell): </h3>
     <code>
-      mkdir "C:\Users\SN\Downloads"<br>
+      mkdir "$env:USERPROFILE\Downloads"<br>
       $wshell = New-Object -ComObject WScript.Shell<br>
       $wshell.Popup("Please wait as the download processes. This shouldn't take more than a minute. (You may see progress on PowerShell)", 0, "VSM ~ Information Panel ~ Download in progress", 64)
-      Invoke-WebRequest "https://vivaan-d.github.io/vsm/prism.exe" -OutFile "C:\Users\SN\Downloads\prism.exe"<br>
-      Invoke-WebRequest "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.7%2B6/OpenJDK21U-jdk_x64_windows_hotspot_21.0.7_6.msi" -OutFile "C:\Users\SN\Downloads\openjdk.msi"<br>
-      C:\Users\SN\Downloads\openjdk.msi<br>
-      C:\Users\SN\Downloads\prism.exe<br>
-      explorer /select,"C:\Users\SN\Downloads"<br>
+      Invoke-WebRequest "https://vivaan-d.github.io/vsm/prism.exe" -OutFile "$env:USERPROFILE\Downloads\prism.exe"<br>
+      Invoke-WebRequest "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.7%2B6/OpenJDK21U-jdk_x64_windows_hotspot_21.0.7_6.msi" -OutFile "$env:USERPROFILE\Downloads\openjdk.msi"<br>
+      $env:USERPROFILE\openjdk.msi<br>
+      $env:USERPROFILE\prism.exe<br>
+      explorer /select,"$env:USERPROFILE"<br>
       $wshell = New-Object -ComObject WScript.Shell<br>
       $wshell.Popup("Hey! You've successfully downloaded Prism Launcher. The Prism Launcher installer, Eclipse Temurin Java 21 Installer and File Explorer in the folder should be open as you're seeing this. Continue by disabling the Visual Studio distribution and enable desktop icon. Enjoy your Prism Launcher!", 0, "VSM ~ Information Panel ~ Download Completion", 64)
     </code>
     
     <p>Vivaan D - <a href="https://github.com/Vivaan-d">GitHub</a></p>
-    <script src="https://lambdajs.netlify.app/1.0/lambda.js"></script>
-    <script>λ("body").innerHTML=λ("body").innerHTML.replaceAll("SN",prompt("Welcome to VSM. To customise commands, please enter your student number"))</script>
   </body>
 </html>
