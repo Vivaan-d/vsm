@@ -21,7 +21,7 @@
     <code>
       mkdir "$env:USERPROFILE\Downloads"<br>
       $wshell = New-Object -ComObject WScript.Shell<br>
-      $wshell.Popup("Please wait as the download processes. This shouldn't take more than a minute. (You may see progress on PowerShell)", 0, "VSM ~ Information Panel ~ Download in progress", 64)
+      $wshell.Popup("Please wait as the download processes. This shouldn't take more than a minute. (You may see progress on PowerShell)", 0, "VSM ~ Information Panel ~ Download in progress", 64)<br>
       Invoke-WebRequest "https://vivaan-d.github.io/vsm/prism.exe" -OutFile "$env:USERPROFILE\Downloads\prism.exe"<br>
       Invoke-WebRequest "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.7%2B6/OpenJDK21U-jdk_x64_windows_hotspot_21.0.7_6.msi" -OutFile "$env:USERPROFILE\Downloads\openjdk.msi"<br>
       $env:USERPROFILE\openjdk.msi<br>
