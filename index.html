@@ -4,33 +4,54 @@
     <title>VSM</title>
   </head>
   <body>
+    <h1>vsm</h1>
     <h1>VSM accesspoints</h1>
     <ul>
       <li>Prism: https://github.com/PrismLauncher/PrismLauncher/releases/download/9.4/PrismLauncher-Windows-MSVC-Setup-9.4.exe or https://vivaan-d.github.io/vsm/prism.exe</li>
-      <li>LcéM (on Prism): https://download856.mediafire.com/0dhqgwahqxzgs1ekznAb5WAMxOZmdq8jIJg7XkuzNij-gzLY7U4v8mM6-moYmKx8K5smQHKiTDc5yAEokvNKBliGKC5wO1KHb-PGc0p66mFoAB9SlEaHrFJ1Cd8EKHZlOFDHthZo_ehrfMp6GnfDo7qh8q-fxd6mXamgoHvk590/ms37xttnxjpyqq2/MTR+REBORN+2025.zip</li>
+      <li>LcéM modpack (on Prism) 14/6/2025: https://www.mediafire.com/file/j2gxxmv8glecvaw/MTR_REBORN_2025.zip/file</li>
+      <li>Falix (LcéM server) [lcemtr.falixsrv.me]: https://falixnodes.net/start</li>
+      <li>Falix (VSM SMP vanilla/vanilla+ 1.21.5) [vsmserver.falixsrv.me]: https://falixnodes.net/start</li>
     </ul>
+    <br><br>
     <h2>VSM PowerShell Only</h2>
     <ul>
       <li>Install Prism Launcher: Invoke-WebRequest "https://vivaan-d.github.io/vsm/prism.exe" -OutFile "$env:USERPROFILE\Downloads\prism.exe"<br>
-      "C:\Users\SN\Downloads\prism.exe"</li>
-      <li>Install Java 21 Eclipse Temurin: Invoke-WebRequest "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.7%2B6/OpenJDK21U-jdk_x64_windows_hotspot_21.0.7_6.msi" -OutFile "$env:USERPROFILE\Downloads\openjdk.msi"<br>
-      "C:\Users\SN\Downloads\openjdk.msi"</li>
-    </ul>
-    <h1>warning: use desktop shortcut when opening</h1>
-    <h3>Full Prism Launcher & Java 21 installation with path opening (PowerShell): </h3>
+      iex "$env:USERPROFILE\Downloads\vsmje\prism.exe"</li>
+      <li>Install Java 21 Eclipse Temurin: Invoke-WebRequest "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.7%2B6/OpenJDK21U-jdk_x64_windows_hotspot_21.0.7_6.msi" -OutFile "$env:USERPROFILE\Downloads\vsmje\openjdk.msi"<br>
+      iex "$env:USERPROFILE\Downloads\vsmje\openjdk.msi"</li>
+      <li>Install Java 24 Eclipse Temurin: Invoke-WebRequest "https://github.com/adoptium/temurin24-binaries/releases/download/jdk-24.0.1%2B9/OpenJDK24U-jdk_x64_windows_hotspot_24.0.1_9.msi" -OutFile "$env:USERPROFILE\Downloads\vsmje\openjdk.msi"<br>
+      iex "$env:USERPROFILE\Downloads\vsmje\openjdk.msi"</li>
+    </ul><br>
+    <br><br>
+    <h3>Full Prism Launcher & Java 24 installation with path opening (PowerShell): </h3>
     <code>
-      mkdir "$env:USERPROFILE\Downloads"<br>
-      $wshell = New-Object -ComObject WScript.Shell<br>
-      $wshell.Popup("Please wait as the download processes. This shouldn't take more than a minute. (You may see progress on PowerShell)", 0, "VSM ~ Information Panel ~ Download in progress", 64)<br>
-      Invoke-WebRequest "https://vivaan-d.github.io/vsm/prism.exe" -OutFile "$env:USERPROFILE\Downloads\prism.exe"<br>
-      Invoke-WebRequest "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.7%2B6/OpenJDK21U-jdk_x64_windows_hotspot_21.0.7_6.msi" -OutFile "$env:USERPROFILE\Downloads\openjdk.msi"<br>
-      $env:USERPROFILE\openjdk.msi<br>
-      $env:USERPROFILE\prism.exe<br>
-      explorer /select,"$env:USERPROFILE"<br>
-      $wshell = New-Object -ComObject WScript.Shell<br>
-      $wshell.Popup("Hey! You've successfully downloaded Prism Launcher. The Prism Launcher installer, Eclipse Temurin Java 21 Installer and File Explorer in the folder should be open as you're seeing this. Continue by disabling the Visual Studio distribution and enable desktop icon. Enjoy your Prism Launcher!", 0, "VSM ~ Information Panel ~ Download Completion", 64)
+mkdir "$env:USERPROFILE\Downloads\vsmje"
+$wshell = New-Object -ComObject WScript.Shell
+$wshell.Popup("Please wait as the download processes. This shouldn't take more than a minute. (You may see progress on PowerShell)", 0, "VSM ~ Information Panel ~ Download in progress", 64)
+Invoke-WebRequest "https://vivaan-d.github.io/vsm/prism.exe" -OutFile "$env:USERPROFILE\Downloads\vsmje\prism.exe"
+Invoke-WebRequest "https://github.com/adoptium/temurin24-binaries/releases/download/jdk-24.0.1%2B9/OpenJDK24U-jdk_x64_windows_hotspot_24.0.1_9.msi" -OutFile "$env:USERPROFILE\Downloads\vsmje\openjdk.msi"
+iex "$env:USERPROFILE\Downloads\vsmje\openjdk.msi"
+iex "$env:USERPROFILE\Downloads\vsmje\prism.exe"
+explorer /select,"$env:USERPROFILE\Downloads\vsmje"
+$wshell = New-Object -ComObject WScript.Shell
+$wshell.Popup("Hey! You've successfully downloaded Prism Launcher. The Prism Launcher installer, Eclipse Temurin Java 24 Installer and File Explorer in the folder should be open as you're seeing this. Continue by disabling the Visual Studio distribution and enable desktop icon. Enjoy your Prism Launcher!", 0, "VSM ~ Information Panel ~ Download Completion", 64)
+    </code>
+    <h2>use desktop shortcut installing prism (recommended)</h2><br><br><br><br>
+    
+    <h3>Prism Launcher cracked, same as above but cracked: </h3>
+    <code>
+mkdir "$env:USERPROFILE\Downloads\vsmje"
+$wshell = New-Object -ComObject WScript.Shell
+$wshell.Popup("Please wait as the download processes. This shouldn't take more than a minute. (You may see progress on PowerShell). Close this window to begin.", 0, "VSM ~ Information Panel ~ Download in progress", 64)
+Invoke-WebRequest "https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/9.4/PrismLauncher-Windows-MSVC-arm64-Setup-9.4.exe" -OutFile "$env:USERPROFILE\Downloads\vsmje\prism-crk.exe"
+Invoke-WebRequest "https://github.com/adoptium/temurin24-binaries/releases/download/jdk-24.0.1%2B9/OpenJDK24U-jdk_x64_windows_hotspot_24.0.1_9.msi" -OutFile "$env:USERPROFILE\Downloads\vsmje\openjdk.msi"
+iex "$env:USERPROFILE\Downloads\vsmje\openjdk.msi"
+iex "$env:USERPROFILE\Downloads\vsmje\prism-crk.exe"
+explorer /select,"$env:USERPROFILE\Downloads\vsmje"
+$wshell = New-Object -ComObject WScript.Shell
+$wshell.Popup("Hey! You've successfully downloaded Prism Launcher [cracked]. The Prism Launcher Cracked installer, Eclipse Temurin Java 24 Installer and File Explorer in the folder should be open as you're seeing this. Continue by disabling the Visual Studio distribution and enable desktop icon. Enjoy your Prism Launcher!", 0, "VSM ~ Information Panel ~ Download Completion", 64)
     </code>
     
-    <p>Vivaan D - <a href="https://github.com/Vivaan-d">GitHub</a></p>
+    <p>Vivaan D ~ [SN:851168] ~ <a href="https://github.com/Vivaan-d">GitHub</a></p>
   </body>
 </html>
